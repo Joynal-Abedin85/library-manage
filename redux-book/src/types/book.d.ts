@@ -2,6 +2,10 @@ export interface Book {
   _id: string;
   title: string;
   author: string;
-  description: string;
+  genre: string;
+  isbn: string;
+  description?: string;
+  copies: number;
+  available: boolean;
   isBorrowed: boolean;
 }

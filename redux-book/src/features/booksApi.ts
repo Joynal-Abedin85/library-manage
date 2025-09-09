@@ -3,7 +3,7 @@ import type { Book } from "@/types/book";
 
 export const apiSlice = createApi({
   reducerPath: "api",
-  baseQuery: fetchBaseQuery({ baseUrl: "http://localhost:5000/api" }), // Change if backend port is different
+  baseQuery: fetchBaseQuery({ baseUrl: "https://redux-backend-lac.vercel.app/api" }), // Change if backend port is different
   endpoints: (builder) => ({
     addBook: builder.mutation<Book, Partial<Book>>({
       query: (newBook) => ({

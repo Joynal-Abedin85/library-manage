@@ -3,7 +3,12 @@ import axios from "axios";
 
 interface BorrowedBook {
   _id: string;
-  title: string;
+  book: {
+    _id: string;
+    title: string;
+    author: string;
+    isbn: string;
+  };
   borrower: string;
   returnDate: string;
 }
@@ -16,7 +21,7 @@ const BorrowSummary: React.FC = () => {
   useEffect(() => {
     const fetchBorrowedBooks = async () => {
       try {
-        const response = await axios.get("http://localhost:5000/api/borrows"); 
+        const response = await axios.get("https://redux-backend-lac.vercel.app/api/borrows"); 
         setBorrowedBooks(response.data);
       } catch (err) {
         setError("Failed to fetch borrowed books");
